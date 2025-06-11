@@ -28,7 +28,7 @@ const dino = {
   vy: 0,
   jump(){
     if (state === 'PLAYING' && this.y >= GROUND_Y - this.h){
-      this.vy = -16;      // impulsion (plus forte qu'avant)
+      this.vy = -12;      // impulsion (plus forte qu'avant)
     }
   }
 };
@@ -82,7 +82,7 @@ function startGame(){
   state = 'PLAYING';
   cancelAnimationFrame(raf);
   last = performance.now();
-  loop();
+  raf = requestAnimationFrame(loop);
 }
 
 function togglePause(){
