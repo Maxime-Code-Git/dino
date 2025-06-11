@@ -6,12 +6,17 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>Dino Runner</h1>
-<canvas id="game" width="600" height="200"></canvas>
-<p>
-  <button onclick="startGame()">Start / Restart</button>
-  <button onclick="pauseGame()">Pause</button>
-</p>
+<h1>Dino&nbsp;Runner</h1>
+
+<canvas id="game"></canvas>
+
+<div class="ui">
+  <button id="btnStart">Start / Restart</button>
+  <button id="btnPause">Pause / Resume</button>
+  <span id="scoreTxt">Score 0</span>
+  <span id="hiTxt">(Hi 0)</span>
+</div>
+
 <script src="dino.js"></script>
 </body>
 </html>

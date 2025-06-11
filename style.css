@@ -1,3 +1,32 @@
-body{background:#111;color:#eee;font-family:sans-serif;text-align:center}
-canvas{background:#222;border:1px solid #555;margin:10px auto;display:block}
-button{margin:4px;padding:6px 14px;font-size:14px}
+body{
+  background:#111;
+  color:#eee;
+  font-family:Arial,Helvetica,sans-serif;
+  text-align:center;
+  margin:0;
+}
+h1{margin:18px 0;}
+canvas{
+  background:#222;
+  border:1px solid #555;
+  margin:0 auto;
+  display:block;
+  max-width:100%;
+}
+.ui{
+  margin:10px 0;
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+button{
+  background:#444;
+  color:#fff;
+  border:0;
+  padding:6px 16px;
+  cursor:pointer;
+  font-size:14px;
+}
+button:hover{background:#666;}
+#scoreTxt,#hiTxt{min-width:90px}
