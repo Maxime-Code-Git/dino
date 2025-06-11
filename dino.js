@@ -5,8 +5,8 @@ const cvs = document.getElementById("game");
 const ctx = cvs.getContext("2d");
 
 const BASE_CANVAS_W = 600;      // largeur max « desktop »
-const CANVAS_H       = 200;
-const GROUND_Y       = 160;     // y du sol (là où posent les pieds)
+const CANVAS_H = 200;
+const GROUND_Y = 160;     // y du sol (là où posent les pieds)
 
 /* Canvas responsive : on s’adapte à la taille de l’écran */
 function resizeCanvas(){
@@ -39,9 +39,10 @@ let spawnTimer   = 0;      // temps avant le prochain obstacle
 /* =========================================================
    ÉTAT DU JEU
    ========================================================= */
-let score   = 0;
+let score = 0;
+let scoreFrac = 0;
 let hiScore = +localStorage.getItem("hi") || 0;
-let speed   = 6;           // vitesse de déplacement des obstacles
+let speed = 6;           // vitesse de déplacement des obstacles
 
 /* Boucle */
 let last = 0, raf;
@@ -159,8 +160,14 @@ function update(dt){
   }
 
   /* SCORE */
-  score += Math.floor(dt * 100);
+  scoreFrac += dt * 100;               // 100 pts / seconde
+  const inc = Math.floor(scoreFrac);
+  if (inc) {
+    score     += inc;
+    scoreFrac -= inc;
+  }
   scoreTxt.textContent = `Score ${score}`;
+
 }
 
 function render(){
