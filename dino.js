@@ -74,6 +74,7 @@ function reset(){
   dino.y  = GROUND_Y - dino.h;
   dino.vy = 0;
   score   = 0;
+  scoreFrac = 0;
   speed   = 6;
   spawnTimer = 0;
 }
@@ -160,7 +161,7 @@ function update(dt){
   }
 
   /* SCORE */
-  scoreFrac += dt * 100;               // 100 pts / seconde
+  scoreFrac += Math.max(0, dt) * 10;
   const inc = Math.floor(scoreFrac);
   if (inc) {
     score     += inc;
